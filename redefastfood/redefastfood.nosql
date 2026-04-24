@@ -1,0 +1,28 @@
+Criando um banco de dados:
+use redefastfood
+
+Criando primeira collection (produto):
+db.produto.insertOne({ nome: "hamburguer", preco: 25, esta_disponivel: true})
+db.produto.insertOne({ nome: "cheeseburguer", preco: 20, esta_disponivel: false})
+db.produto.insertOne({ nome: "hot-dog", preco: 18, esta_disponivel: true})
+
+Criando segunda collection (lojas)
+db.lojas.insertOne({ nome: "filial São Paulo", endereco: "av. Paulista", numero: 500})
+db.lojas.insertOne({ nome: "filial Rio de Janeiro", endereco: "av. Brasil", numero: 393})
+db.lojas.insertOne({ nome: "filial Bahia", endereco: "av. Xique-Xique", numero: 290})
+
+Exibindo dados:
+db.produto.find()
+db.lojas.find()
+
+Exportando o banco de dados (Backup):
+mongodump -d redefastfood -o redefastfood
+
+Excluindo após o Backup:
+db.dropDatabase()
+
+usando o Restore
+mongorestore redefastfood
+
+Excluindo banco de dados:
+db.dropDatabase()
